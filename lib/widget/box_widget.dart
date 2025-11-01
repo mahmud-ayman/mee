@@ -15,7 +15,7 @@ class box_widget extends StatelessWidget {
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: const Color.fromARGB(255, 46, 91, 113),
+          color: const Color.fromARGB(75, 46, 91, 113),
         ),
         child: Row(
           children: [

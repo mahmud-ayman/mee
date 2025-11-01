@@ -29,15 +29,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              const Color.fromARGB(255, 8, 37, 62),
-              const Color.fromARGB(255, 75, 124, 166),
-              Color.fromARGB(255, 24, 35, 82),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/back_ground.png',
+            ), // ← ضع صورتك هنا
+            fit: BoxFit.cover, // تغطي الشاشة بالكامل
           ),
         ),
 
@@ -46,12 +43,12 @@ class _MyAppState extends State<MyApp> {
           body: SafeArea(
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Spacer(flex: 1),
 
                   CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: const Color.fromARGB(83, 255, 255, 255),
                     radius: 120,
                     child: CircleAvatar(
                       radius: 115,
@@ -69,8 +66,9 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 5),
                   Text(
-                    'flutter developer',
+                    'flutter developer | UI/UX',
                     style: GoogleFonts.aBeeZee(
                       textStyle: TextStyle(
                         shadows: [
@@ -99,7 +97,10 @@ class _MyAppState extends State<MyApp> {
                     },
                     child: box_widget(
                       text: "01205535624",
-                      icon: Icon(Icons.phone, color: Colors.cyanAccent),
+                      icon: Icon(
+                        Icons.phone,
+                        color: const Color.fromARGB(146, 24, 255, 255),
+                      ),
                     ),
                   ),
 
@@ -112,7 +113,10 @@ class _MyAppState extends State<MyApp> {
                     child: box_widget(
                       text: "mahmoudayman202030@gmail",
 
-                      icon: Icon(Icons.mail, color: Colors.cyanAccent),
+                      icon: Icon(
+                        Icons.mail,
+                        color: const Color.fromARGB(154, 24, 255, 255),
+                      ),
                     ),
                   ),
                   Spacer(flex: 1),
@@ -124,7 +128,7 @@ class _MyAppState extends State<MyApp> {
                             _launchURL('https://github.com/mahmud-ayman'),
                         child: Image.asset(
                           "assets/images/github-mark.png",
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color: const Color.fromARGB(143, 253, 255, 252),
                           width: 50,
                           height: 50,
                         ),
@@ -136,8 +140,54 @@ class _MyAppState extends State<MyApp> {
                         ),
                         child: Image.asset(
                           "assets/images/linkedin.png",
+                          color: const Color.fromARGB(143, 253, 255, 252),
                           width: 50,
                           height: 50,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Spacer(flex: 2),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Transform(
+                        alignment: Alignment.center,
+                        transform: Matrix4.rotationX(
+                          3.1416,
+                        ), // تدوير 180 درجة حول المحور الرأسي X
+                        child: Image.asset(
+                          'assets/images/arrow.png',
+                          color: const Color.fromARGB(171, 255, 255, 255),
+                          width: 30,
+                          height: 30,
+                        ),
+                      ),
+                      SizedBox(width: 130),
+                    ],
+                  ),
+
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () => _launchURL(
+                          "https://www.canva.com/design/DAGz_FJ9tlY/oBvTTIf8zO3yQcB40xCe8g/edit?utm_content=DAGz_FJ9tlY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton",
+                        ),
+                        child: Text(
+                          'Portfolio',
+                          style: GoogleFonts.pacifico(
+                            textStyle: const TextStyle(
+                              color: Color.fromARGB(115, 255, 255, 255),
+                              fontSize: 28,
+                              shadows: [
+                                Shadow(
+                                  blurRadius: 4.0,
+                                  color: Colors.black45,
+                                  offset: Offset(1.0, 1.0),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ],
