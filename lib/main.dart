@@ -19,11 +19,10 @@ class _MyAppState extends State<MyApp> {
   Future<void> _launchURL(String url) async {
     final Uri uri = Uri.parse(url);
     if (!await launchUrl(uri, mode: LaunchMode.externalApplication)) {
-      throw Exception('فشل في فتح الرابط');
+      throw Exception('erorr');
     }
   }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,10 +30,8 @@ class _MyAppState extends State<MyApp> {
       home: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              'assets/images/back_ground.png',
-            ), // ← ضع صورتك هنا
-            fit: BoxFit.cover, // تغطي الشاشة بالكامل
+            image: AssetImage('assets/images/back_ground.png'),
+            fit: BoxFit.cover,
           ),
         ),
 
@@ -153,9 +150,8 @@ class _MyAppState extends State<MyApp> {
                     children: [
                       Transform(
                         alignment: Alignment.center,
-                        transform: Matrix4.rotationX(
-                          3.1416,
-                        ), // تدوير 180 درجة حول المحور الرأسي X
+                        transform: Matrix4.rotationX(3.1416),
+
                         child: Image.asset(
                           'assets/images/arrow.png',
                           color: const Color.fromARGB(171, 255, 255, 255),
